@@ -1,22 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useCall } from './hooks/call'
+import { useHttpGet } from './hooks/http'
 import './App.css';
 
 export default function App() {
-    // const [fetchedData, setFetchedData] = useState(null)
     const ApiEndPoint = 'https://reqres.in/api/users'
-    const [fetchedData, ] = useCall(ApiEndPoint, [])
+    const [fetchedData, ] = useHttpGet(ApiEndPoint, [])
     
-    console.log(fetchedData)
-
-    // useEffect(() => {
-    //     fetch(ApiEndPoint)
-    //     .then(res => res.json())
-    //     .then(responseData =>{
-    //         console.log(responseData)
-    //         setFetchedData(responseData.data)
-    //     }).catch((error)=>alert(error))
-    // }, []);
+    // console.log(fetchedData)
 
     return (
         <div className="App">
